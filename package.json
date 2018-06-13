@@ -1,0 +1,29 @@
+{
+  "name": "chat-up",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11"
+  },
+  "description": "Simple free-for-all chat application created using NodeJS",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neomrc/chat-up.git"
+  },
+  "author": "Marc Pioquinto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neomrc/chat-up/issues"
+  },
+  "homepage": "https://github.com/neomrc/chat-up#readme"
+}
