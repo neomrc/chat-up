@@ -1,5 +1,6 @@
 const defaultRoute = require('./default');
+const methods = {};
 
-module.exports = {
-  default: defaultRoute
-}
+methods.index = defaultRoute;
+
+module.exports = methods;
