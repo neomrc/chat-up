@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "init:dev": "npm install && npm run start",
-    "init:test": "npm install && npm run test",
-    "init:prod": "npm install --production",
+    "init:dev": "npm install && npm run db:fresh && npm run start",
+    "init:test": "npm install && npm run db:fresh && npm run test",
+    "init:prod": "npm install --production && npm run db:migrate",
     "db:clean": "./node_modules/.bin/sequelize db:migrate:undo:all",
     "db:migrate": "./node_modules/.bin/sequelize db:migrate",
     "db:seed": "./node_modules/.bin/sequelize db:seed:all",
-    "postinstall": "npm run db:clean && npm run db:migrate && npm run db:seed",
+    "db:fresh": "npm run db:clean && npm run db:migrate && npm run db:seed",
     "test": "mocha --exit",
     "start": "node ./bin/www"
   },

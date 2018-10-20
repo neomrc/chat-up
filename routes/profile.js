@@ -23,7 +23,7 @@ router.post('/', [validationRules], (req, res, next) => {
   // attach user's ip address
   req.body.last_login_ip = req.connection.remoteAddress;
 
-  models.user.create(req.body)
+  models.profile.create(req.body)
     .then(user => {
       user = user.get({plain: true});
       models.account.create({
