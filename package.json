@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "init:dev": "npm install && npm run start",
-    "init:test": "npm install && NODE_ENV=test && npm run test",
+    "init:test": "npm install && npm run test",
     "init:prod": "npm install --production",
     "db:clean": "./node_modules/.bin/sequelize db:migrate:undo:all",
     "db:migrate": "./node_modules/.bin/sequelize db:migrate",
