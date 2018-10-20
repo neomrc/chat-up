@@ -3,7 +3,7 @@ const createError = require('http-errors');
 
 /* GET home page. */
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Chat up' });
+  res.status(200).send(`You're in the right place`);
 });
 
 app.use('/api/auth', require('./auth'));
