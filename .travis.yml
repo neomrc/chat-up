@@ -6,4 +6,5 @@ cache:
   directories:
   - "node_modules"
 before_install:
+  - npm install -g node-gyp
   - npm run init:test
