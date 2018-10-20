@@ -1,7 +1,7 @@
 'use strict';
 
 const faker = require('faker');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 const jwt = require('jsonwebtoken');
 
 module.exports = {

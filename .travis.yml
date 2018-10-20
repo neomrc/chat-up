@@ -7,14 +7,6 @@ services:
 cache:
   directories:
   - "node_modules"
-sudo: required
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-5
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS chat_test;'
-  - npm install -g node-gyp
   - npm run init:test
