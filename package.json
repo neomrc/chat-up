@@ -3,20 +3,36 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "init:dev": "npm install && npm run start",
+    "init:test": "npm install && NODE_ENV=test && npm run test",
+    "init:prod": "npm install --production",
+    "db:clean": "./node_modules/.bin/sequelize db:migrate:undo:all",
+    "db:migrate": "./node_modules/.bin/sequelize db:migrate",
+    "db:seed": "./node_modules/.bin/sequelize db:seed:all",
+    "postinstall": "npm run db:clean && npm run db:migrate && npm run db:seed",
+    "test": "mocha",
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-validator": "^5.3.0",
     "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.3.0",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
+    "mysql2": "^1.6.1",
+    "pug": "2.0.0-beta11",
+    "sequelize": "^4.41.0",
+    "sequelize-cli": "^5.2.0"
   },
   "description": "Simple free-for-all chat application created using NodeJS",
   "main": "app.js",
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "faker": "^4.1.0",
     "mocha": "^5.2.0"
   },
   "repository": {

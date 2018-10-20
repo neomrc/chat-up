@@ -1,6 +1,16 @@
-const defaultRoute = require('./default');
-const methods = {};
+const app = require('express')();
+const createError = require('http-errors');
 
-methods.index = defaultRoute;
+/* GET home page. */
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Chat up' });
+});
 
-module.exports = methods;
+app.use('/api/auth', require('./auth'));
+app.use('/api/profile', require('./profile'));
+
+app.all('*', (req, res) => {
+  res.status(404).send(createError(404));
+});
+
+module.exports = app;
