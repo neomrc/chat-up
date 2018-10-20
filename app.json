@@ -1,0 +1,9 @@
+{
+  "name": "chat-up",
+  "description": "Simple free-for-all chat application created using NodeJS",
+  "repository": "https://github.com/neomrc/chat-up.git",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "npm run db:migrate"
+  }
+}
